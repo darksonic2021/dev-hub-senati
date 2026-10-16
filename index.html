@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dev HUB SENATI: catálogo de recursos tecnológicos para estudiantes. Busca y filtra herramientas de programación, diseño e inteligencia artificial.">
+  <meta name="author" content="Integrantes Dev HUB SENATI">
+  <meta name="theme-color" content="#0b0f1a">
+  <title>Dev HUB SENATI | Catálogo de recursos tecnológicos</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Accesibilidad: enlace para saltar la navegación con el teclado -->
+  <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <!-- ============================================================
+       ENCABEZADO + NAVEGACIÓN
+       ============================================================ -->
+  <header class="site-header">
+    <div class="contenedor site-header__inner">
+
+      <a class="logo" href="#inicio" aria-label="Dev HUB SENATI, volver al inicio">
+        <span class="logo__icono" aria-hidden="true">&lt;/&gt;</span>
+        <span class="logo__texto">Dev HUB <strong>SENATI</strong></span>
+      </a>
+
+      <nav class="nav-principal" aria-label="Navegación principal">
+        <ul class="nav-principal__lista">
+          <li><a class="nav-principal__enlace" href="#inicio">Inicio</a></li>
+          <li><a class="nav-principal__enlace" href="#catalogo">Catálogo</a></li>
+          <li><a class="nav-principal__enlace" href="#equipo">Equipo</a></li>
+          <li><a class="nav-principal__enlace" href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="contenido-principal">
+
+    <!-- ============================================================
+         HERO / SECCIÓN PRINCIPAL
+         ============================================================ -->
+    <section class="hero" id="inicio" aria-labelledby="hero-titulo">
+      <div class="contenedor hero__contenido">
+
+        <p class="hero__badge">Plataforma colaborativa de aprendizaje</p>
+
+        <h1 class="hero__titulo" id="hero-titulo">
+          Dev HUB <span class="texto-degradado">SENATI</span>
+        </h1>
+
+        <p class="hero__descripcion">
+          Reunimos en un solo lugar los mejores recursos tecnológicos para estudiantes de
+          SENATI: programación, diseño, control de versiones e inteligencia artificial.
+          Explora, busca y filtra las herramientas que impulsarán tus proyectos.
+        </p>
+
+        <div class="hero__acciones">
+          <a class="btn btn--primario" href="#catalogo">Explorar catálogo</a>
+          <a class="btn btn--secundario" href="#equipo">Conocer al equipo</a>
+        </div>
+
+        <ul class="hero__estadisticas">
+          <li><strong>6+</strong> recursos</li>
+          <li><strong>5</strong> categorías</li>
+          <li><strong>2</strong> integrantes</li>
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CATÁLOGO DE RECURSOS
+         IDs requeridos por el contrato HTML <-> JS (Integrante 2):
+           #buscador  -> campo de texto de búsqueda
+           #categoria -> selector de categorías
+           #mensaje   -> texto de resultados / estado
+           #recursos  -> contenedor donde JS inserta las tarjetas (vacío)
+         ============================================================ -->
+    <section class="catalogo" id="catalogo" aria-labelledby="catalogo-titulo">
+      <div class="contenedor">
+
+        <header class="seccion-encabezado">
+          <h2 class="seccion-titulo" id="catalogo-titulo">Catálogo de recursos</h2>
+          <p class="seccion-descripcion">
+            Usa el buscador o el filtro por categoría para encontrar el recurso ideal.
+          </p>
+        </header>
+
+        <!-- Controles de búsqueda y filtrado -->
+        <div class="controles" role="search" aria-label="Buscador y filtros del catálogo">
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="buscador">Buscar recurso</label>
+            <input
+              class="campo__entrada"
+              type="search"
+              id="buscador"
+              name="buscador"
+              placeholder="Ej. Git, Figma, Python..."
+              autocomplete="off"
+              aria-describedby="mensaje">
+          </div>
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="categoria">Categoría</label>
+            <select class="campo__entrada campo__entrada--select" id="categoria" name="categoria">
+              <option value="todas">Todas las categorías</option>
+              <option value="programacion">Programación</option>
+              <option value="diseno">Diseño</option>
+              <option value="control-de-versiones">Control de versiones</option>
+              <option value="inteligencia-artificial">Inteligencia artificial</option>
+              <option value="productividad">Productividad</option>
+            </select>
+          </div>
+
+          <!-- Botón interactivo: JS limpia buscador y filtros -->
+          <button class="btn btn--secundario btn--bloque" type="button" id="limpiar">
+            Limpiar filtros
+          </button>
+
+        </div>
+
+        <!-- Mensaje de resultados (lo actualiza el JS) -->
+        <p class="mensaje" id="mensaje" role="status" aria-live="polite">
+          Cargando recursos...
+        </p>
+
+        <!-- Contenedor VACÍO: el Integrante 2 renderiza aquí las tarjetas -->
+        <div class="grid-recursos" id="recursos" aria-live="polite"></div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECCIÓN EQUIPO / INTEGRANTES
+         Nombres PROVISIONALES: reemplazar por los nombres reales.
+         ============================================================ -->
+    <section class="equipo" id="equipo" aria-labelledby="equipo-titulo">
+      <div class="contenedor">
+
+        <header class="seccion-encabezado">
+          <h2 class="seccion-titulo" id="equipo-titulo">Nuestro equipo</h2>
+          <p class="seccion-descripcion">
+            Proyecto desarrollado de forma colaborativa con Git, ramas y Pull Requests.
+          </p>
+        </header>
+
+        <div class="grid-equipo">
+
+          <article class="integrante" aria-labelledby="integrante-1">
+            <div class="integrante__avatar" aria-hidden="true">I1</div>
+            <h3 class="integrante__nombre" id="integrante-1">Integrante 1</h3>
+            <p class="integrante__rol">Frontend: HTML, CSS y diseño responsive</p>
+            <p class="integrante__detalle">
+              Estructura semántica, sistema de estilos, tarjetas, botones y adaptación
+              a celulares y computadoras.
+            </p>
+            <ul class="integrante__tags">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>Responsive</li>
+            </ul>
+          </article>
+
+          <article class="integrante" aria-labelledby="integrante-2">
+            <div class="integrante__avatar" aria-hidden="true">I2</div>
+            <h3 class="integrante__nombre" id="integrante-2">Integrante 2</h3>
+            <p class="integrante__rol">Lógica: JavaScript, catálogo, buscador y filtros</p>
+            <p class="integrante__detalle">
+              Definición de los recursos, renderizado del catálogo, búsqueda en tiempo
+              real y filtrado por categorías.
+            </p>
+            <ul class="integrante__tags">
+              <li>JavaScript</li>
+              <li>DOM</li>
+              <li>Git</li>
+            </ul>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       PIE DE PÁGINA
+       ============================================================ -->
+  <footer class="site-footer" id="contacto">
+    <div class="contenedor site-footer__inner">
+
+      <div class="site-footer__marca">
+        <p class="logo__texto">Dev HUB <strong>SENATI</strong></p>
+        <p class="site-footer__texto">
+          Proyecto académico colaborativo de la carrera de Tecnologías de la Información.
+        </p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Enlaces del pie de página">
+        <h2 class="site-footer__titulo">Secciones</h2>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#equipo">Equipo</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-footer__nav">
+        <h2 class="site-footer__titulo">Tecnologías</h2>
+        <ul>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>Git &amp; GitHub</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="site-footer__legal">
+      <p>&copy; <span id="anio">2026</span> Dev HUB SENATI. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript del Integrante 2 (catálogo, buscador y filtros) -->
+  <script src="js/app.js" defer></script>
+
+</body>
+</html>
