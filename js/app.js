@@ -214,7 +214,9 @@ function crearTarjetaRecurso(recurso) {
   botonCopiar.className = 'btn btn--secundario recurso__copiar';
   botonCopiar.dataset.url = recurso.url;
   botonCopiar.textContent = 'Copiar enlace';
-  botonCopiar.setAttribute('aria-label', 'Copiar el enlace de ' + recurso.titulo);
+  // El nombre accesible debe CONTENER el texto visible ("Copiar enlace") para
+  // cumplir la regla label-content-name-mismatch de WCAG 2.5.3.
+  botonCopiar.setAttribute('aria-label', 'Copiar enlace de ' + recurso.titulo);
 
   tarjeta.appendChild(icono);
   tarjeta.appendChild(categoria);
