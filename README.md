@@ -35,13 +35,13 @@ dev-hub-senati/
 
 | Integrante | Rol |
 |---|---|
-| Integrante 1 | HTML, CSS y diseño responsive |
-| Integrante 2 | JavaScript, catálogo, buscador y filtros |
+| Jorge Sanchez | Frontend, diseño Cyber Nexus |
+| Aydan Ormeño | JavaScript, buscador, filtros y apoyo en diseño e implementación |
 
 ## Flujo de trabajo colaborativo
 
 1. Cada integrante trabaja en su propia rama:
-   - `feature/integrante1-html-css`
-   - `feature/integrante2-js-catalogo`
+   - `feature/frontend`
+   - `feature/funcionalidades`
 2. Se abre un Pull Request por rama hacia `main`.
 3. Tras la revisión, se hace merge en `main`.
